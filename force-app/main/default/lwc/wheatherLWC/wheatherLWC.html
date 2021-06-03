@@ -1,0 +1,15 @@
+<template>
+    <lightning-card  title="Get Wheather" icon-name="standard:forecasts">
+        <lightning-layout>
+            <lightning-layout-item padding="around-small" size="6">
+                <lightning-input type="text" name="EnterCity" label="Enter city Name" onkeyup={changecity} value={city}></lightning-input>
+            </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="6">
+               <b>Temperature :{temperature}</b>
+               </lightning-layout-item>
+        </lightning-layout>
+        <div class="slds-align_absolute-center" >
+            <lightning-button variant="brand" label="Get Wheather" onclick={getTemp} ></lightning-button>
+           </div>
+    </lightning-card>
+</template>
