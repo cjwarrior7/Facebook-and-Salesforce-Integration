@@ -16,8 +16,7 @@ export default class BookListingApp extends LightningElement {
           /* response.json() gives us back a promise
           we need to process the promise in .then()*/
         .then((data) => {console.log(data)
-           this.books = data
-          console.log(':'+books); })
+           this.books = data; })
         .catch((error =>console.error(error)));
       }
 //deboucing technique of Searching with timer variable
