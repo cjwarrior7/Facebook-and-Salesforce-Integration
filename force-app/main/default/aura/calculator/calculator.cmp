@@ -1,0 +1,18 @@
+<aura:component controller="CalcController">
+<div class="slds-p-horizontal_small">Simple Calulator</div>
+<aura:attribute name="fnum"  type="decimal" />
+<aura:attribute name="snum"  type="decimal" />
+<aura:attribute name="res" type="decimal" />
+<div  class="slds-p-horizontal_small">
+<!-- how to use aura id
+<lightning:input type="number"  aura:id="input1"  label="Enter a First number" />
+<lightning:input type="number"  aura:id="input2"  label="Enter a Second number" />
+<lightning:input type="number"  aura:id="result"  label="Result" />
+-->
+<!-- how to use aura attribute see below-->
+<lightning:input type="number" value="{!v.fnum}"  label="Enter a First number" />
+<lightning:input type="number" value="{!v.snum}"  label="Enter a Second number" />
+<lightning:input type="number" value="{!v.res}"   label="Result" />
+<lightning:button variant="base" label="Click me" title="Base action" onclick="{!c.calculate}"/>
+</div>
+</aura:component>	
