@@ -1,0 +1,40 @@
+<aura:component Controller="ContactController">
+       <aura:attribute name="contactobj" type="Contact" default="{ 'sobjectType':'Contact',
+       'FirstName':'',
+       'LastName':'',
+       'Phone':''
+     }"/>
+    <!-- *****Make key Name here Same as that of Contact object FieldName in Salesforce*******  -->
+    <aura:attribute name="success" type="boolean" default="false"/>
+    <aura:attribute name="contactList" type="Contact[]" />
+
+    <aura:if isTrue="{!v.success}">
+    <div class="slds-notify__content">
+	<ui:message title="Success" severity="confirm" closable="true">
+			Contact is Created successfully
+	</ui:message>
+   </div>
+     <div>
+   <aura:iteration items="{!v.contactList}" var="item">
+     <p> &nbsp; &nbsp;{!item.FirstName} &nbsp; &nbsp;
+        &nbsp; &nbsp; {!item.LastName} &nbsp; &nbsp;
+        &nbsp; &nbsp; {!item.Phone} </p>
+    </aura:iteration>
+      </div>
+  </aura:if> 
+     
+
+    <lightning:card variant="Narrow" title="Contact" iconName="standard:contact">
+
+    <div class="slds-p-horizontal_small">
+    <lightning:input value = "{!v.contactobj.FirstName}" label = "Enter FirstName" />
+    <lightning:input value = "{!v.contactobj.LastName}" label = "Enter LastName" />
+    <lightning:input type = "tel"  value = "{!v.contactobj.Phone}" label = "Enter Phone" />
+  
+   </div>
+   <div class="slds-p-horizontal_small slds-p-top_xx-small" >
+       <lightning:button variant="brand" label="Save" title="Brand action" onclick="{!c.doSave}" />
+   </div>
+        
+  </lightning:card>
+</aura:component>
