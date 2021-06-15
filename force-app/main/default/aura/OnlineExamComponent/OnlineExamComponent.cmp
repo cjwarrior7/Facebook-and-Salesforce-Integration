@@ -1,0 +1,41 @@
+<aura:component controller="OnlineExamController">
+<aura:attribute name="startTest" type="Boolean"  default="false"/>
+<aura:attribute name="QuestionWrapper" type="OnlineExamController.QuestionWrapper"/>
+            <lightning:card  title="Online Exam">
+            <lightning:layout multipleRows="true">
+            <lightning:layoutItem padding="around-small" size="12">
+            <lightning:input required="true" aura:id="name" label="Student Name" />
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small" size="12">
+            <div class="slds-align_absolute-center" >
+            <lightning:button variant="brand" label="Start Test" title="Brand action" onclick="{!c.startTest}" />
+             </div>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+            </lightning:layoutItem>
+            </lightning:layout>
+            <aura:if isTrue="{!v.startTest}">
+            <div style="font-size:15px;color-blue">
+            <lightning:layout multipleRows="true">
+            <aura:iteration items="{!v.QuestionWrapper}" var="item">
+            <lightning:layoutItem padding="around-small" size="12">
+             {!item.qNo}){!item.question.question__c}<br></br>
+             </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small" size="12">
+            <lightning:radioGroup name="{!item.question.Id}"
+                          options="{!item.options}"
+                          value="{!item.selectedAnswer}"
+                          type="radio"/>
+             </lightning:layoutItem>
+             </aura:iteration>
+            <lightning:layoutItem padding="around-small" size="12">
+            <div class="slds-align_absolute-center" >
+            <lightning:button variant="brand" label="Submit" title="Brand action" onclick="{!c.submitTest}" />
+             </div>
+             </lightning:layoutItem>
+              
+            </lightning:layout>
+            </div>
+            </aura:if>
+            </lightning:card >
+</aura:component>	
