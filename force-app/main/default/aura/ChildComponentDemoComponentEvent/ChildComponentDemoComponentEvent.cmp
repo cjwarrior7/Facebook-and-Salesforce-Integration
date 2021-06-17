@@ -1,0 +1,8 @@
+<aura:component>
+<!--Step1 Register Event-->
+ <aura:registerEvent name="ComponentEvent" type="c:ComponentEvent"/>
+<lightning:card>
+Hi I am in Child Component
+<lightning:button variant="Brand" label="Fire Event" onclick="{!c.fireEvent}"/>
+</lightning:card>
+</aura:component>

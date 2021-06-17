@@ -1,0 +1,11 @@
+<aura:component>
+    <!--Step3 handle the event in Parent Component-->
+<aura:handler name="ComponentEvent" event="c:ComponentEvent" action="{!c.handleComponentEvent}"/>
+<aura:attribute name="message" type="String" />
+<lightning:card>
+
+Message from Child Component -- {!v.message} <br></br>
+Hi I am in Parent Component
+    <c:ChildComponentDemoComponentEvent/>
+</lightning:card>
+</aura:component>

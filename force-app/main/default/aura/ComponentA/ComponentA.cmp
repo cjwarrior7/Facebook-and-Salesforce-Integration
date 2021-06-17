@@ -1,0 +1,7 @@
+<aura:component>
+<aura:registerEvent name="ApplicationEventExample" type="c:ApplicationEventExample"/>
+<lightning:card title="Component A">
+HI I am ComponentA <br></br>
+<lightning:button variant="Brand" label="Fire Event" onclick="{!c.fireEvent}"/>
+</lightning:card>
+</aura:component>	
