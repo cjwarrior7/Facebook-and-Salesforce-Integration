@@ -1,0 +1,9 @@
+<aura:component>
+<lightning:card title="Parent Component">
+I am in Parent Component
+<lightning:button variant="Brand"  label="Call Child Component" onclick="{!c.callChildMethod}"/>
+</lightning:card>
+<lightning:card >
+<c:ChildCmp aura:id="mychildComponent" />
+</lightning:card>
+</aura:component>	

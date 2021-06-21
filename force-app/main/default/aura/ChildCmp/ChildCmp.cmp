@@ -1,0 +1,8 @@
+<aura:component>
+<aura:method name="childMethod" action="{!c.onChildMethod}" access="global">
+<aura:attribute name="message" type="String"/>
+</aura:method>
+<lightning:card title="Child Component">
+I am in child Component
+</lightning:card>
+</aura:component>	
