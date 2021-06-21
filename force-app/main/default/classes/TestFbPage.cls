@@ -37,5 +37,8 @@ public class TestFbPage {
             
         }
     }
+    
+    //https://developers.facebook.com/tools/explorer/?method=GET&path=me%3Ffields%3Did%2Cname&version=v11.0    //api Test Link from App and to generate new token from here
+
 
 }
