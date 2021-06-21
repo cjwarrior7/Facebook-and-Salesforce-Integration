@@ -1,0 +1,10 @@
+<apex:page controller="TestFbPage">
+    <apex:pageBlock title="Facebook Page Details">
+        <apex:outputText value="{!idInfo }">Page Id:</apex:outputText><br/>
+        <apex:outputText value="{!nameInfo}">Page Name:</apex:outputText><br/>
+        <apex:outputText value="{!fancountInfo}">Page Fan Count:</apex:outputText><br/>
+    </apex:pageBlock>
+    <apex:chart animate="true" height="350" width="400" data="{!PieData}">
+    <apex:pieSeries dataField="fanCount" labelField="fanType" donut="50"></apex:pieSeries>
+    </apex:chart>
+</apex:page>
