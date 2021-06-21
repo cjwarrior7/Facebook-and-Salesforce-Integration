@@ -5,7 +5,8 @@ public class TestFbPage {
     public String websiteInfo{get;set;}
     public Integer fancountInfo{get;set;}
    
-    public TestFbPage(){
+    public TestFbPage() {
+
         Http http = new  Http();
         HttpRequest req = new HttpRequest();
         req.setEndpoint('https://graph.facebook.com/104699321865341?fields=id,name,website,fan_count,posts&access_token=EAAHACWJrUs4BAMIEvVxllpdxNO3gYHoZCXmuXeweTGOzhDswoZBTfGMLsMBs5eJLnweVfu2MLKCm8IodOiOLPQl6X7JL3SETayeDtMEfwFCpjpTl8UiXA9l1MF9oUHNZBHFXCwNzxAZBkUALfZANoZBKBXMFkLT9HeGp0U0SdRYfLeF7zdlIX1pV4YZCZBrVe4pjnxVrb1itGAZDZD');
@@ -17,13 +18,13 @@ public class TestFbPage {
         idInfo = wrapper.id;
         nameInfo = wrapper.name;
         fancountInfo = wrapper.fan_count;
-            
-        
+
 }
     public List<PieWedgeData> getPieData(){
+
           List<PieWedgeData> data = new List<PieWedgeData>();
-         data.add(new PieWedgeData('Total Fan Count',fancountInfo));
-         return data;
+          data.add(new PieWedgeData('Total Fan Count',fancountInfo));
+          return data;
         
     }
     
@@ -35,7 +36,6 @@ public class TestFbPage {
             this.fanCount = fanCount;
             
         }
-        
     }
 
 }
